@@ -1,0 +1,59 @@
+Multithreading : Multithreading in java is a process of executing multiple threads simultaneously.
+
+    Thread is a light weight sub-process, the smallest unit of processing.
+    Lifecycle of threads:
+    new
+    runnable
+    running
+    non-runnable(or blocked)
+    terminate
+
+Inner Classes : Java inner class or nested class is a class which is declared inside the class or interface.
+                we use inner class to logically group classes and interface in one place so that it can be more readable and maintainable.It can access all the member of other class including private data member and methods.
+
+Enums : Enum in java is a data type which contains a fixed set of constants.
+
+        Syntax : enum Season{WINTER,SUMMER,SPRING,FALL}
+
+Generics and Collections : 
+* Generics : THe java Generics programming is introduced in J2SE to deal with type safe objects. It makes the code stable by detecting the bugs at compile time.
+
+                Syntax:
+                Class MyGen<t>{
+                    T obj;
+                    void add(T obj){
+                        this.obj=obj;
+                    }
+                    T get(){
+                        return obj;
+                    }
+                }
+
+*Collections : The collection in java is a framework that provides an architecture to store and manipulate the group of the objects.
+                A Collections represents a single unit of objects.i.e a group.
+
+Create and use a generic class : 
+
+Create and use ArrayList, TreeSet, TreeMap, and ArrayDequeue objects.
+
+Use java.util.Comparator and java.lang.Comparable interfaces.
+
+Collections Streams and Filters.
+Sol. Streams :
+    
+    import java.uti.stream
+
+    Filters : Java Stream provides a method filters() to filter stream elements on the basis of given predicate.
+    Syntax : 
+    Stream<T> filter(Predicate<? super T>predicate)
+
+Iterate using forEach methods of Streams and List.
+Sol. Syntax : 
+        default void forEach(Consumer <Super T>action)
+
+Describe Stream interface and Stream pipeline.
+
+Filter a collection by using lambda expressions :
+
+
+Use method references with Streams

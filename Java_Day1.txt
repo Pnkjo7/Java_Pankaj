@@ -1,0 +1,378 @@
+/**----- JAVA_Day1_Question-------*/
+Java Basics:
+Define the scope of variables?
+Sol. A variables is a container which holds the value while the java program is executed. A variables is assigned with the data type.
+
+    variables is a name of memory locations.There are 3 types of variables in java:
+    Local variable : A variable declared inside the body of the method is called local variable. you can use this variable only within the method and the other method in the class aren't even aware the variable exists.
+    A local variable cannot be defined with the static keyword.
+
+    Instance variable : A variable declared inside a class but outside the body of the method, is called instance variable It is not declared as static.
+    It is called instance variable because its value is instance specific and is not shared among instance.
+
+    Static variable :  A variable which is declared as static is called static variable. It cannot be local.You can create a single copy of static variable and share among all the instance of the class.Memory allocation for static variable happen only once when the class is loaded in the memory.
+
+    Code:
+    class A{
+        int data=50;        //instance variable
+        static int m=100;   //static variable
+        void method()
+        {
+            int n=90;       //local variable
+        }
+    }
+
+
+Define the structure of a Java class?
+Sol. 1.Documentation Section
+     2.Package Statement
+     3.Import Statement
+     4.Interface Statement
+     5.Class Definition
+     6.main method class{
+         main method Definition
+     }
+
+Create executable Java applications with a main method; run a Java program from the command line; produce console output
+Sol. Class Hello{
+    public static void main[Strings[] args]{
+        System.out.println("Hello Java Intern");
+        }
+    }
+
+    Terminal Output:
+    Javac Hello.java
+    Java Hello
+    Hello Java Intern
+
+Import other Java packages to make them accessible in your code
+Sol. A java package is a group of similar types of classes, interfaces, and sub-packages.
+    code:
+    //save by first.java
+    package pack;
+    public Class first{
+        public void msg(){
+            System.out.println("welcome to package);
+        }
+    }
+    // save by Second.java
+    import pack.*;
+    Class Second{
+        public static void main(Strings[] args){
+            first obj = new first();
+            obj.msg();
+        }
+    }
+
+
+
+"1- Working With Java Data Types:
+Declare and initialize variables (including casting of primitive data types)
+Sol. Data types specify the different size and values that can be stored in the variable.there are two types of data types:
+
+    primitive data types : The primitive data types include Boolean,char,byte,short,int,long,float and double.
+
+    Non-primitive data types : The non-primitive data types include Classes,interfaces and arrays.
+
+    Declarations:
+    1. Boolean one=true (Either true or false)
+    2. byte a=10        (8-bit)
+    3. short s=10000    (16-bit)
+    4. int a =100000    (32-bit)
+    5. long a=100000l   (64-bit)
+    6. float f1=234.5f  (32-bit)
+    7. double d1=12.3   (64.bit)
+    8. char letterP='A'  (16-bit)
+
+Differentiate between object reference variables and primitive variables
+Sol. The primitive data types are predefined in java that serves as a fundamental building block while the reference data types refers to where data is stored.
+
+    In Java, non-primitive data types are know as reference types.A variable of class type is called reference data type.It contains the address of dynamically create objects.
+    Example:
+    If Demo is a class and we have created its object d, the the variable d is known as a reference type.
+
+    Types of reference data types:
+    Class : It is set of instructions.It describes the content of the object. 
+    Array : It provides the fixed-size data structure that stores the element of the same type.
+    Annotations : It provides a way to associates metadata with the program elements.
+    Interface : It is implemented by Java Classes.
+    Enumerations : It is special kind of class that is type-safe.Each element inside the enum is an instance of the enum.
+
+Know how to read or write to object fields
+Sol. Class Student{                         //define a classes
+    int id;                                 //instance variable
+    String name;
+    public static void main(Strings[] args){    //creating main method inside the student class
+        Student s1 = new Student();             //creating an object of student
+        System.out.println(s1.id);              //accessing member through reference variable 
+        System.out.println(s1.name);
+    }
+}
+*-----------Develop code that uses wrapper classes such as Boolean, Double, and Integer
+Sol. 
+
+2- Classes & Objects
+*------------Explain an Object's Lifecycle (creation, ""dereference by reassignment"" and garbage collection)
+
+3- Operator
+Using Operators and Decision Constructs
+Sol. Operator in java is a symbol which is used to perform operations.
+    Types of operators:
+    1.Unary         postfix                   expr++,expr--
+                    prefix                    ++expr,--expr,+expr,-expr,~,! 
+    2.Arithmetic    multiplicative            *,/,%
+                    additive                  +,-
+    3.Shift         Shift                     <<,>>,>>>
+    4.Relational    comparison                <,>,<=,>=,instanceof
+                    equality                  ==,!=
+    5.Bitwise       bitwise AND               &
+                    bitwise exclusive OR      ^
+                    bitwise inclusive OR
+    6.Logical       logical AND               &&
+                    logical OR                ||
+    7.Ternary       ternary                   ?:
+    8.Assignment    assignment                =,+=,-=,/=,%=,&=,^=,|=,<<=,>>=,>>>=
+
+*-------------Use Java operators; use parentheses to override operator precedence
+
+Test equality between Strings and other objects using == and equals ()
+Sol. String Compare by == operator
+    
+    The == operator Compares reference not values.
+
+    Code:
+    Class Teststring{
+        public static void main(Strings [] args){
+            String s1="Pankaj";
+            String s2="Pankaj";
+            String s3=new String("Pankaj");
+            System.out.println(s1==s2);         //true(because created in same instance)
+            System.out.println(s1==s2);         //false(because s3 refers to instance created in nonpool)
+            
+        }
+    }
+
+    String compare by equals() method
+
+    The String equals() method compares the original content of the string. It compares values of String for equality.
+
+    Code:
+    Class test{
+        public static void main(Strings[] args)
+        {
+            String s1="Pankaj";
+            String s2="Pankaj";
+            String s3=new String("Pankaj");
+            String s4="Nitin";
+            System.out.println(s1.equals(s2));  //true
+            System.out.println(s1.equals(s3));  //true
+            System.out.println(s1.equals(s4));  //false
+
+        }
+    } 
+
+Create if and if/else and ternary constructs
+Sol. 1. If condition:
+        The Java if statement is used to test condition.It checks boolean condition: true or false.
+
+        Syntax:
+        if(condition)
+        {
+            //code to be executed
+        }
+
+        If/Else condition:
+        The java if-else statement also test the condition. It executes the if block if the condition is true otherwise else block is executed.
+
+        Syntax:
+        if(condition)
+        {
+            //code to be executed if true
+        }else{
+            code if condition is false
+        }
+
+        Ternary constructs:
+        we can also use ternary operator(?:) to perform the task of if...else statement. It is a shorthand way to check the condition.If the condition is true, the result of ? is returned. But, if the condition is false, the result of : is returned.
+
+        Example:
+        public class ifelseter{
+            public static void main(Strings[] args)
+            {
+                int n=7;
+                String output=(n%2==0)?"even number":"odd number";
+                System.out.println(output);
+            }
+
+        }
+
+Use a switch statement and Use break?
+sol. A java Switch Statement executes one statement from multiple conditions.
+    Syntax:
+    Switch(expression)
+    case value1:    //Code to be executed
+                break; //use of break
+    case value2:    //Code to be executed
+                break; //use of break
+    default:
+    //Code to be executed if all cases are not matched
+
+when a break statement is encountered inside a loop, the loop is immediately terminated and the program control resumes at the next statement following a loop.
+Syntax:
+jump-statement;
+break;
+
+Code:
+
+    public class Switcheg{
+        public static void main(Strings[] args)
+        {
+            int n=7;
+            switch(n){
+            case 3: System.out.println("case3 print");
+            break;
+            case 5: System.out.println("Case5 print");
+            break;
+            case 7 : System.out.println("case7 print");
+            break;
+            default : System.out.println("Not in case1,case2 or case3");
+            }
+        }
+    }
+
+4- Array
+Creating and Using Arrays
+Sol. Java array is an object which contains elements of a similar data type.The elements of an array are stored in a contiguous memory location. It is data structure where we store similar elements.we can store only a fixed set of elements in a java array.
+    Array in java is index-based, the first element of the array is stored at the 0th index, 2nd element is stored on 1st index and so on.
+
+    declaration:
+    int a[]=new int[5];
+
+Declare, instantiate, initialize and use a one-dimensional array
+Sol. int a[]={7,17,18,28};
+    
+    Code:
+    class testarray{
+        public static void main(Strings[] args)
+        {
+            int arr[]={7,17,18,28};
+            for(int i=0;i>arr.length;i++)
+            {
+                System.out.println(arr[i]);
+            }
+        }
+    }
+
+Declare, instantiate, initialize and use multi-dimensional arrays
+Sol. int arr[][]=new int[3][3];
+    code:
+    class testarray{
+        public static void main(Strings[] args)
+        {
+            int arr[][]={{1,2,3},{2,4,5},{4,4,5}}
+            for(int i=0;i<arr.length;i++)
+            {
+                for(int j=0;j<arr[i].length;j++)
+                {
+                    System.out.println(arr[i][j]+" ");
+                }
+                System.out.println();
+            }
+
+        }
+    }
+
+5- Iteration Statements
+Using Loop Constructs
+Create and use while loops
+Sol. The Java while loop is used to iterate a part of the part of the program several times.If the number of iteration is not fixed,it is recommend to use while loop.
+    Syntax:
+    while(condition){
+        //code to be executed
+    }
+
+    Code:
+    public class whileeg{
+        public static void main(Strings[] args)
+        {
+            int i=0;
+            while (i<=10){
+                System.out.println(i);
+                i++;
+            }
+        }
+
+    }
+
+
+Create and use for loops including the enhanced for loop
+Sol. For loop:
+    The Java for loop is used to iterate a part of the program several times. If the number of iterations is fixed, it is recommended to use for loop.
+
+    Syntax:
+    for(initialize;condition;incr/decr)
+    {
+        statement or code to be executed
+    }
+
+    For-each and enhanced for loop:
+    The for-each loop is used to traverse array or collection in java.It is easier to use than simple for loop because we don't need to increment value and use subscript notations. 
+
+    Syntax:
+    for(Type var:array)
+    {
+        //code to be executed
+    }
+
+Create and use do/while loops
+Sol. The java do-while loop is used to iterate a part of the program several times. If the number of the iterations is not fixed and you must to execute the loop at least once, it is recommended to use do-while loop.
+    The java do-while loop is executed at least  once because condition is checked after loop body.
+
+    Syntax:
+    do{
+        //code to be executed
+    }while(condition);
+
+    code:
+    public class dowhileeg{
+        public static void main(Strings[] args)
+        {
+            int i=1;
+            do{
+                System.out.println(i);
+                i++;
+            }while(i<=10);
+        }
+    }
+
+Compare loop constructs
+Sol. for loop                                       while loop                              do while loop
+    The java for loop is a control following    The java while loop is a            The java do while loop is a control flow
+    statement that iterates a part of the       control flow statement that         statement that executes a part of the programs
+    program multiple times.                     repeatedly on the basis of given    at least once and the further execution depends
+                                                boolean condition.                  upon the given boolean condition.
+
+    If the number of iteration is fixed, it is  If the number of iteration is not   If the number of iteration is not fixed and you must have
+    recommended to use for loops.               fixed, it is recommended to use     to execute the loop at least once, it is recommend to use the do-while
+                                                while loop.                         loop.
+
+Use Continue
+Sol. The Continue statement is used in loop control structure when you need to jump to the next iteration of the loop immediately.It can be used with for loop and while loop.
+
+     Syntax:
+     jump-statement;
+     continue;
+
+     code:
+     public class Continueeg{
+         public static void main(Strings[] args)
+         {
+             for(int i=1;i<=10;i++)
+             {
+                 if(i==5){
+                     continue;
+                 }
+                 System.out.println(i);
+             }
+         }
+     }

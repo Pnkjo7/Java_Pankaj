@@ -1,0 +1,34 @@
+*Lambda Built-in Functional Interfaces :
+Lambda expressions provides implementation of functional interface.An Interface which has only one abstract method is called functional interface.Java provides an annotation @FunctionalInterface,
+which is used to declare an interface as functional interface.
+
+syntax:
+(Arguments)->{Body}
+
+*Use the built-in interfaces included in the java.util.function package such as Predicate, Consumer, Function, and Supplier
+
+Predicate Functional Interface :It represents predicate (boolean-valued function) of one arguments.Basically, a predicate is a function that evaluates the input and return true or false.
+
+package name:
+import java.uti.function.Predicate
+
+1. and(Predicate other)
+2. or(Predicate other)
+3. negate()
+4. isEqual(Object targetRef)
+
+Supplier functional interface : It represents supplier of results.
+
+Consumer functional interface : It represents an operation that accepts a single arguments and return no results.
+
+Function : It represents a function that accepts one arguments and return a result.
+
+*Develop code that uses primitive versions of functional interfaces
+
+*Develop code that uses binary versions of functional interfaces
+
+*Develop code that uses the UnaryOperator interface
+Sol. The UnaryOperator<T> interface represents a function that takes one argument of type T and return a value of the same type.This is similar to the function interface, which is a parent of the unary operator interface.
+        Syntax:
+        T apply(T t)
+

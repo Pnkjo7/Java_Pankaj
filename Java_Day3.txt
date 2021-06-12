@@ -1,0 +1,80 @@
+*Working with Methods and Encapsulation.
+Sol. Encapsulation : It is a process of wrapping code and data together into a single unit.
+
+    Methods : A method is way to perform a task.
+
+    In Java, a method is a block of code or collection of statement or set of code grouped together to perform a certain task or operation.
+
+    there are two types of method:
+    1. Predefined methods
+    2. User-defined methods
+
+    Declaration of methods:
+
+    Access-Specifier return-type method-name parameter list  
+
+*Create methods with arguments and return values; including overloaded methods
+Sol. Method overloading: It is also possible that a method has the same name as another method in the same class, it is known as method overloading.  
+    There are two ways to overload:
+    by changing no. of arguments
+    by changing the data types
+
+*Apply the static keyword to methods and fields
+Sol. Static Method: A method that has static keyword is know as static method.
+    a method that belongs to a class rather than instance of the class  is known as static method.
+    wec can create static method by include static keyword in front of method.
+
+Create and overload constructors; differentiate between default and user defined constructors
+
+Apply access modifiers
+
+*Apply encapsulation principles to a class
+
+Determine the effect upon object references and primitive values when they are passed into methods that change the values
+
+Working with Inheritance
+
+Describe inheritance and its benefits
+Sol. Inheritance : It is a mechanism in which obe object acquires all the properties and behavior of a parent object.
+    Inheritance represents the Is-A relationship which is also known as Parent-Child relationship.
+
+    Syntax of inheritance:
+    class Sub-Class extends superclass-name{
+        methods and fields
+    }
+
+    Types of the inheritance:
+    Single level
+    multilevel level
+    hierarchal level
+    multiple level
+    hybrid level
+Develop code that makes use of polymorphism; develop code that overrides methods; differentiate between the type of a reference and the type of an object
+
+Determine when casting is necessary
+Sol. 
+
+Use super and this to access objects and constructors
+
+Use Abstract classes and Interfaces
+Sol. Abstract class : A class which is declared with the Abstract keyword is know as an Abstract class in java.
+    It can have Abstract and Non-Abstract methods(method with the body)
+
+    Abstraction : Abstraction is a process of hiding the implementations details and showing only functionality to the user.
+    
+
+    Interfaces : An Interfaces in java is a blueprint of class.It has static constant and Abstract methods.
+
+Handling Exceptions
+Sol. The Exception Handling in java  is one of the powerful mechanism to handle  the runtime errors so that normal flow of the application can be maintained.
+
+
+Differentiate among checked exceptions, unchecked exceptions, and Errors
+
+Create a try-catch block and determine how exceptions alter normal program flow
+
+Describe the advantages of Exception handling
+
+Create and invoke a method that throws an exception
+
+Recognize common exception classes (such as NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException, ClassCastException)
