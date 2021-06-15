@@ -1,0 +1,208 @@
+*BufferedReader code : 
+    import java.io.*;
+public class BufferedReadereg {
+
+	public static void main(String[] args) {
+		try {
+		FileReader fr = new FileReader("/Users/chiranjeevchauhan/Dev/Java_Stream/test5.txt"); 
+		BufferedReader br = new BufferedReader(fr);
+		int i;
+		while ((i=br.read())!=-1){
+			System.out.print((char)i);
+		}
+		br.close();
+		fr.close();
+		}catch(Exception e)
+		{
+		System.out.println(e);		}
+		}
+
+}
+
+*BufferedWriter code :
+    import java.io.*;
+public class BufferedWritereg {
+
+	public static void main(String[] args) {
+		try 
+		{
+			FileWriter fw = new FileWriter("/Users/chiranjeevchauhan/Dev/Java_Stream/test5.txt");
+			BufferedWriter bw= new BufferedWriter(fw);
+			bw.write("Welcome to Buffered Writer and BuuferedRead");
+			bw.close();
+			System.out.println("Sucess....");
+			
+		}catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}
+
+*File code :
+    import java.io.*;
+public class FileName {
+
+	public static void main(String[] args) {
+		boolean bool =false;
+		String path="";
+		try {
+			File file=new File("/Users/chiranjeevchauhan/Dev/Java_Stream/text5.txt"); 	//creating new file
+			if(file.createNewFile()) {													//checking file is exist or not.
+				System.out.println("New file is Created.");
+			}else {
+				System.out.println("File already exists.");
+			}
+			
+			System.out.println(file);
+			File file2 = file.getCanonicalFile();										//creating new canonical file object
+			System.out.println(file2);
+			bool = file2.exists();														//return true if file exist
+			path = file2.getAbsolutePath();
+			System.out.println(bool);													//returns absolute pathname
+			if(bool) {
+				System.out.println(path +" Exists: "+bool);								//if file exist
+			}
+			
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
+
+*FileReader code : 
+    import java.io.*;
+public class FileReadereg {
+
+	public static void main(String[] args) {
+		try {
+			FileReader rw = new FileReader("/Users/chiranjeevchauhan/Dev/Java_Stream/text5.txt");
+			int i;
+			while((i=rw.read())!=-1)
+				System.out.print((char)i);
+			rw.read();
+			rw.close();
+		}catch(Exception e)
+		{
+			System.out.println(e);		}
+	}
+
+}
+
+*FileWriter code :
+    import java.io.*;
+public class FileWritereg {
+
+	public static void main(String[] args) {
+		try {
+			FileWriter fw = new FileWriter("/Users/chiranjeevchauhan/Dev/Java_Stream/text5.txt");
+			fw.write("welcome to filewriter concept");
+			fw.close();
+			System.out.println("Sucess....");
+		}catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}
+
+*FileInputStream code : 
+    import java.io.FileInputStream;
+public class FileInputStreameg {
+
+	public static void main(String[] args) {
+		try {
+			FileInputStream fin= new FileInputStream("/Users/chiranjeevchauhan/Dev/Java_Stream/test2.txt");
+			int i=0;
+			while((i=fin.read())!=-1) {
+			System.out.print((char)i);}
+			
+			fin.close();
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		
+
+	}
+
+
+}
+
+*FileOutputStream code :
+    import java.io.FileOutputStream;
+
+public class FileOutputStreameg {
+
+	public static void main(String[] args) {
+		try {
+			FileOutputStream fout = new FileOutputStream("/Users/chiranjeevchauhan/Dev/Java_Stream/test.txt");
+			String s="Welcome to javaTpoint.";  
+			byte b[]=s.getBytes();
+			fout.write(b);
+			fout.close();
+			System.out.println("Success.....");
+		
+		}catch(Exception e)
+		{
+			System.out.println(e);
+			
+		}
+
+	}
+
+}
+
+ObjectOutputStream code :
+ObjectInputStream code :
+PrintWriter code :
+    import java.io.*;
+public class PrintWritereg {
+
+	public static void main(String[] args) throws Exception {
+		PrintWriter wr = new PrintWriter(System.out);
+		wr.write("Java PrintWriter tutuorials");
+		wr.flush();
+		wr.close();
+		
+		PrintWriter wre = null;
+		wre = new PrintWriter(new File("/Users/chiranjeevchauhan/Dev/Java_Stream/PrintWriter.txt"));
+		wre.write("Like java programminig");
+		wre.flush();
+		wre.close();
+		
+	}
+
+}
+
+Submit queries and read results from the database including creating statements, 
+returning result sets, iterating through the results, and properly closing result sets, 
+statements, and connections
+
+Code.
+    package com.javainternityday3;
+import java.sql.*;
+
+class MysqlCon{  
+public static void main(String args[]){  
+
+	try{  
+
+		Class.forName("com.mysql.cj.jdbc.Driver");  
+
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/employees","root","");  //here employees is database name, root is username and password  
+
+		Statement stmt=con.createStatement();  
+
+		ResultSet rs=stmt.executeQuery("select * from employees where gender = 'M'");  
+
+		while(rs.next())  
+
+			System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3)+"  "+rs.getString(4)+"  "+rs.getString(5)+"  "+rs.getString(6));  
+
+		con.close();  
+		}catch(Exception e){ System.out.println(e);}  
+	}  
+}  
