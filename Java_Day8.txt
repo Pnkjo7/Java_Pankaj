@@ -1,0 +1,47 @@
+JEE basics.
+Sol. The Java EE stands for Java Enterprise Edition. which was earlier known as J2EE and is currently know as Jakarta EE.
+It is a set of specification wrapping around Java SE(Standard Edition).The Java EE provides a platform for developer with 
+enterprise features such as distributed computing and web services.Java EE application are usually run on reference run 
+times such as microservers or application servers. 
+example: some contents where Java EE is used are e-commerce, accounting, banking information system. 
+
+JEE 2-tier, 3-tier, n-tier architecture
+Sol. 2-Tier architecture : It is like Client-Server architecture,where communication takes place between client and server.
+    In this type of software architecture, the presentation layer or interface layer runs on the client side while dataset layer gets 
+    executed and stored on server side.
+    There is no business logic layer or immediate layer in between client and server.
+
+    3-Tier architecture : There are 3 layer : 
+    *Presentation layer : The top most level of the application is the user interface. The main function of the interface 
+    is to translate tasks and result to something the user can understand.
+    *Business layer : This layer coordinates the application,processes commands make logical decision and evaluation and 
+    performs calculation.It also moves and process data between the two surroundings layers
+    *Database layer : Here information is stored and retrieved from a database or file system.The information is then 
+    passed back to the logic tier for processing, and then eventually back to the user.
+
+    n-tier architecture : An N-tier Application program is one that is distributed among three or more separate computers 
+    in a distributed network.
+
+JEE application components-EJB, Servlets & JSP.
+Sol. Servlets : A Servlet is a java class that runs in a Java-enabled server.An Http servlet is a special type of servlet 
+that handles a HTTP request and provides an HTTP response,usually in the form of an HTML page.The most common use of web 
+logic HTTP servlets is to create interactive applications using standard web browser for the client-side presentation 
+while weblogic server handles the business logic as a server-side process.weblogic HTTP servlet can access database,
+Enterprise Javabeans , messaging API's, HTTP session, and other facilities of weblogic server.
+
+JSP : JavaServer Pages (JSPs) are a Sun Microsystems specification for combining Java with HTML to provide dynamic 
+content for web pages. When you create dynamic content, JSPs are more convenient to write that HTTP servlets because 
+they allow you to extend Java code directly into your HTML pages, in contrast with HTTP server, in which you embed HTML 
+inside Java code.   
+
+JEE runtime environment-Web Server and Application Server.
+Sol. Web Server : Web Server contains only web and servlet container. It can be used for servlet,jsp,struts,jsg etc. 
+It can't be used for EJB. It is a computer where the web content can be stored.In general web server can be used to host the web sites but there also used some other web servers also such as FTP, email, storage, gaming etc.
+    Examples : Apache Tomcat and Resin.
+
+    Application server : Application server contains web and EJB containers. It can be used for servlet,jsp,struts,jsf,
+    ejb etc. It is a component based product that lies in the middle-tier of a server centric architecture.
+    It provides the middleware services for state maintenance and security,along with persistance and data access. 
+    It is a type of server designed to install,operate and host associated services and application for the IT services,
+    edn users and organizations.
+    Examples : JBoss, Glassfish, Weblogic, Websphere  
