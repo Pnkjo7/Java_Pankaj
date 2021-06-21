@@ -1,0 +1,14 @@
+Servlets
+Introduction
+Web Application basics
+*Client-Server Architecture
+Servlet Basics
+HTTP Servlet
+*Servlet Lifecycle
+Servlet Engine
+Redirect & Request Dispatcher
+Session Tracking
+URL Writing
+HTTP Authentication
+Form Based Authentication
+Connectivity with Database using JDBC
