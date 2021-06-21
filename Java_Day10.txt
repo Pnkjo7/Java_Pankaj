@@ -1,0 +1,65 @@
+"JSP
+ JSP basics :
+ Sol. JSP technology is used to create web application just like servlet technology.It can be thought of as extension to 
+ Servlet because it provide more functionality than servlet such as expression language,JSTL, etc.
+    
+ JSP Engine(Conversion to Servlet)
+ 
+ Expressions and Declarations
+ Sol. Expressions : The code placed with JSP expression tag is written to the output stream of the response.so you need not write out.print() to write data.It is mainly used to print the values of variable and method.
+        Syntax:
+        <%= statement%>
+
+    Declarations : The JSP declaration tag is used to declare fields and methods.
+    The code written inside the jsp declaration tag is placed outside the service() method of auto generated servlet.
+    So it doesn't get memory at each request.
+        Syntax :
+        <%! field or method declaration %>
+ 
+ Directives :
+ Sol. The Jsp directives are messages that tells the web container how to translate a JSP page into the corresponding servlet.
+        Syntax :
+        <%@ directive attribute="value"%>
+
+        There are 3 types of directives:
+        1. page directives
+        Syntax:
+        <%@ page directive="value"%>
+
+        2. include directives
+        <%@ include file="resourcename"%>
+        
+        3. tag directives
+        Syntax:
+        <%@ taglib uri="uriofthetaglibrary" prefix="prefixof taglibrary"%>
+
+ Includes and Forwards:
+ Sol. Includes : The jsp:include action tag is used to include the content of the another resource it may be JSP,html 
+                or servlet.
+                The jsp include action tag includes the resource at request time so it is better for dynamic pages because there 
+                might be changes in future.
+                The jsp:include tag can be used to include static as well as dynamic pages.
+
+    Syntax:
+    without parameter:
+    <jsp:include page="relativeURL | <%=expression%>"/>
+
+    with parameter:
+    <jsp:include page="relativeURL | <%=expression%>">
+    <jsp:param name="parametername" value="parameter | <%=expression%>">
+    </jsp:include>
+
+    Forwards: The jsp:forward action tag is used to forward the request to another resource it may be jsp, html or 
+    another resource.
+    Syntax:
+    without parameter:
+    <jsp:forward page="relativeURL | <%=expression%>"/>
+
+    with parameter:
+    <jsp:forward page="relativeURL | <%=expression%>">
+    <jsp:param name="parametername" value="parameter | <%=expression%>">
+    </jsp:forward>
+
+
+
+ JSTL : The JSP standard tag Library (JSTL) represents a set of tags to simply the JSP development.
