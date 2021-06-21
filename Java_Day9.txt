@@ -1,14 +1,84 @@
 Servlets
-Introduction
-Web Application basics
-*Client-Server Architecture
+Introduction : Servlet can be described in many ways, depending on the context.
+    * Servlet is a technology which is used to create a web application.
+    * Servlet is an API that provides many interfaces and classes including documentation.
+    * Servlet is an interface that must be implemented for creating any servlet.
+    * Servlet is a class that extend the capabilities of the servers and responds to the incoming requests. It can 
+    respond to any requests.
+    * Servlet is a web component that is deployed on the server to create a dynamic web page.
+
+Web Application basics : A web application is an application accessible from the web. A web application is composed of 
+web component like Servlet,JSP,Filter, etc. and other elements such as HTML, CSS, and JavaScript. The web components 
+typically executes in Web Server adn respond to the HTTP request.
+
+Client-Server Architecture : 
+
 Servlet Basics
-HTTP Servlet
-*Servlet Lifecycle
-Servlet Engine
-Redirect & Request Dispatcher
-Session Tracking
+
+HTTP Servlet : The HttpServlet class extends the GenericServlet class and implements serializable interface. It provides http specific methods such as doGet,doPost,doHead,doTrace etc.
+                There are many methods in HttpServlet class :
+                * public void service(ServletRequest req, ServletResponse res)
+                * protected void service(HttpServletRequest req, HttpServletResponse res)
+                * protected void doGet(HttpServletRequest req, HttpServletResponse res)
+                * protected void doPost(HttpServletRequest req, HttpServletResponse res)
+                * protected void doHead(HttpServletRequest req, HttpServletResponse res)
+                * protected void doOptions(HttpServletRequest req, HttpServletResponse res)
+                * protected void doPut(HttpServletRequest req, HttpServletResponse res)
+                * protected void doTrace(HttpServletRequest req, HttpServletResponse res)
+                * protected void doDelete(HttpServletRequest req, HttpServletResponse res)
+                * protected void getLastModified(HttpServletRequest req)
+
+Servlet Lifecycle : The web container maintains the life cycle of the servlet instance.
+    * Servlet class is loaded : The classloader is responsible to load the servlet class. The servlet class is loaded 
+    when the first request for the servlet is received by the web container.
+    * Servlet instance is created : The web Container creates the instance of the servlet after loading the servlet class. 
+    The servlet instance is created only once in the servlet life cycle.
+    * init method is invoked : The web container call the init method only once after creating the servlet instance. 
+    The init method is used to initialize the servlet. It is the life cycle method of the javax.servlet.Servlet interface. 
+    Syntax of the init method is : 
+        public void init(ServletConfig config) throws ServletException
+    * service method is invoked : The web container calls the service method each time when request for the servlet is 
+    received. If servlet is not initialized, it follows the first 3 steps as described above then calls the service method.
+    If the servlet is initialized, it calls the service method.Notice that servlet initialized only once. 
+    The syntax of the service method of the servlet interface is given below:
+        public void service(ServletRequest request,ServletResponse response)
+        throws ServletException, IOException.
+    * destroy method is invoked : The web container calls the destroy method before removing the servlet instance from 
+    the service. It gives the servlet an opportunity to clean up any resource for example memory,thread etc.
+    The syntax of the destroy method of the servlet interface is given below:
+        public void destroy() 
+
+Servlet Engine : 
+
+Redirect & Request Dispatcher :
+Sol. RequestDispatcher : The RequestDispatcher interface provides the facility of dispatching the request to another resource it may be html,servlet or jsp. This interface can also be used to include the content of another resource also. It is one of the way of servlet collaboration.
+        There are two methods defined in the RequestDispatcher interface:
+        * public void forward(ServletRequest request,ServletResponse response)throws ServletException
+        * public void include(ServletRequest request,ServletResponse response)throws ServletException
+
+        Syntax :
+        public RequestDispatcher getRequestDispatcher(String resource);
+
+    Redirect : The SendRedirect() method of HttpServletResponse interface can be used to redirect response to another resource, it may be servlet,jsp or html file.
+                It accepts relative as well as absolute URL.
+                It works at client side because it uses the url bar of the browser to make another request.So, it can work inside and outside the server.
+                Syntax :
+                public void SendRedirect(String URL)throws IOException;
+
+Session Tracking : Session simply means a particular interval of time.
+                Session tracking is a way to maintain state(data) of an user.It is also known as session management in servlet.
+                Http protocol is a stateless so we need to maintain state using session tracking techniques.Each time user request to the server, server treats the request as the new request. So we need to maintain the state of an user to recognize to particular user.
+                Http is stateless that means each request is considered as the new request.
+                Session Tracking techniques :
+                * Cookies
+                * Hidden Form Field 
+                * URL Rewriting 
+                * HttpSession
+
 URL Writing
+
 HTTP Authentication
+
 Form Based Authentication
+
 Connectivity with Database using JDBC

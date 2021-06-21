@@ -1,0 +1,31 @@
+Introduction to MVC architecture : 
+Sol. The Model-View-Controller(MVC) is an Architectural pattern that separates an application into 
+three main logical components: the model, the view, and the controller. Each of these components 
+are built to handle specific development aspects of an application. MVC is one of the most 
+frequently used industry-standard web development framework to create scalable and extensible 
+projects.
+
+*Model : The model component corresponds to all data related logic that the user works with.This can represent either the data that is being transferred between the view and controller components or any other business logic-related data.
+for eg : a customer object will retrieve the customer information from the database, manipulate it and update it data back to the database or uses it render data.
+
+*View : The view component is used for all the UI logic of the application.
+for eg : the customer view will include all the UI components such as text boxes, dropdown, etc. that the final user interacts with.
+
+*Controller : Controller acts an interface between model and view component to process all the business logic and incoming request, manipulate data using the model component and interact with the views to render the final output.
+for eg : the customer controller will handle all the interactions and inputs from the customer view and update the database using the customer model. The same controller will be used to view the customer data.
+
+ORM Basics : Object Relational Mapping(ORM) is a functionality which is used to develop and maintain a relationship between an object and relational database by mapping an object state to database column.It is capable to handle various database operation easily such as inserting, updating, deleting etc.
+            ORM frameworks:
+            * Hibernate
+            * TopLink
+            * ORMLite
+            * iBATIS
+            * JPOX
+Types :
+    * One-to-one
+    * One-to-many
+    * Many-to-one
+    * Many-to-many
+
+Introduction to Hibernate : Hibernate is a Java framework that simplifies the development of java application to interact with the database.It is an open source, lightweight, ORM(Object Relational mapping) tool.Hibernate implements the specifications of JPA(Java Persistance API) for data persistance.
+                            
