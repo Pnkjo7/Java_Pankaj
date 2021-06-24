@@ -1,0 +1,42 @@
+Hibernate Configuration Hibernate Sessions Annotation Based Configuration : 
+Sol. As Hibernate can operate in different environment, it requires a wide range of configuration parameters. These 
+configuration contain the mapping information that provide different functionalities to java classes.Generally, 
+we provide database related mappings in the configuration file. Hibernate facilitates to provide the configuration 
+either in an XML file(hibernate.cfg.xml) or properties file (like hibernate.properties)
+An instance of configuration class allows specifying properties and mapping to applications. This class also builds an 
+immutable SessionFactory.
+we can acquire the configuration class instance by instantiating it directly and specifying mappings in the configuration 
+file. Use the addResource() method, if the mapping files are present in the classpath.
+
+    configuration cfg = new configuration().addResource("employee.hbm.xml")
+     
+
+Hibernate O/R Mappings : There are 3 most important mapping topics :
+                        * Collection Mappings
+                        * Associate Mappings
+                        * Component Mappings
+
+Inheritance Mappings : There are 3 Inheritance Mappings :
+                        * Table per Hierarchy
+                        * Table per concrete class
+                        * Table per Subclass
+
+Hibernate Query Language : Hibernate Query Language (HQL) is same as SQL(Structured Query Language) but it doesn't 
+depends on the table of the database.Instead of table name, we class name in HQL. So it is database independent query 
+language.
+                Syntax : 
+                Query query = session.createQuery("from Emp");
+                List list = query.list();
+
+Criteria Queries : Hibernate provides alternate ways of manipulating objects and in turn data available in RDBMS tables. 
+One of the methods is criteria API, which allows you build up a criteria query object programmatically where you can 
+apply filtration rules and logical conditions.
+The Hibernate session interface provides createCriteria() method, which can be used to create a criteria object that 
+returns instance of the persistance object's class when your application executes a criteria query.
+
+                Syntax : 
+                Criteria cr = session.createCriteria(Emp.class);
+                List results = cr.list(); 
+
+JPA : The Java Persistance API(JPA) is a specification of the java. It is used to persist between Java object and 
+relational database. JPA acts as a bridge between object-oriented domain models and relational data systems.
