@@ -34,6 +34,18 @@ required dependencies.The @Component annotation is the most common method of def
         @Component
         public class vehicle{}
 
-Spring - Bean Scopes 
+Spring - Bean Scopes :
+Sol. Bean scopes refers to the lifecycle of bean it means when the object of bean will be instantiated, how long that object live, and how many objects will be created.
+
+The Spring Framework supports the following five scopes, three of which are available only if you use a web-aware ApplicationContext.
+    1. Singleton : This scopes the bean definition to a single instance per spring IoC container (default).
+    2. Prototype : This scopes a single bean definition to have any number of object instance.
+    3. Request : This scopes a bean definition to an HTTP request. Only valid in the context of a web-aware Spring ApplicationContext.
+    4. Session : This scopes a bean definition to an HTTP session.Only valid in the context of a web-aware Spring ApplicationContext.
+    5. Global-Session : This scopes a bean definition to a global HTTP session. Only valid in the context of a web-aware Spring ApplicationContext.
+
 
 Spring - Bean Life Cycle
+Sol. The life cycle of a spring is easy to understand .when a bean is instantiated, it may be required to perform some initialization to get it into a usable state.Similarly, when the bean is no longer required and is removed from the container, some cleanup may be required.
+Through, there are lists of the activities that take place behind the scene between the time of bean instantiation and its destruction, this chapter will discuss only two important bean life cycle callback methods, which are required at the time of bean initialization and its destruction.
+To define setup and teardown for a bean, we simply declare the <bean> with initiated and/or destroy-method parameters. The init-method attribute specifies a method is to be called on the bean immediately upon instantiation.Similarly, destroy method specifies a method that isc called just before a bean is removed from the container. 
