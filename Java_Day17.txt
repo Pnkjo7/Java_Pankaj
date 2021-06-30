@@ -1,0 +1,12 @@
+Spring - Dependency Injection
+Sol. When writing a complex Java application, application classes should be as independent as possible of other Java classes to increase the possibility to reuse these classes and to test them independently of other classes while unit testing.Dependency injection helps in gluing these classes together and at the same time keeping them independent.
+
+Spring - Injecting Inner Beans
+Sol. Java inner classes are defined within the scope of other classes.similarly, inner beans are beans that are defined within the scope of another bean. Thus, a <bean/> element inside the <property/> or <constructor-arg/> elements is called inner bean.
+
+Spring - Injecting Collection
+Sol. Spring offers 4 types of Collection:
+    1. <list> : This helps in wiring a set of values but without any duplicates.
+    2. <set> : This can be used to inject a collection of name-value pairs where name and value can be of any type.
+    3. <map> : This can be inject a collection of name-value pairs where name and value can be of any type.
+    4. <props> : This can be used to inject a collection of name-value pairs where the name and value are both Strings.
