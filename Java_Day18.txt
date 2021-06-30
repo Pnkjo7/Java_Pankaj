@@ -1,5 +1,13 @@
-Spring - Beans Auto-Wiring :
+Spring - Beans Auto-Wiring
+Sol. The Spring container can autowire relationships between collaborating beans without using <constructor-args> and <property> elements, which helps cut down on the amount of XML configuration you write for a big Spring-based application.
 
-Annotation Based Configuration :
 
-Spring - Java Based Configuration :
+Annotation Based Configuration
+Sol. There are 4 types of Annotation Based Configuration :
+    1. @Required : It applies to a bean property setter methods. 
+    2. @Autowired : It can be apply to bean property setter methods, non-setter methods, constructor and properties.
+    3. @Qualifier : It can be used along with @Autowired  to remove the confusion by specifying which exact bean will be wired.
+    4. @JSR-250 Annotation : It includes @Resource, @PostConstructs and @PreDestroy.
+
+Spring - Java Based Configuration
+Sol. 
